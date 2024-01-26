@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+
+* {
+	font-family: 'Poppins';
+}
+
+body {
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px 45px 20px;
+	box-shadow: 0 0 4px #ccca;
+}
+
+nav h2, .mp3 {
+	font-family: 'Oswald', sans-serif;
+	margin: 0;
+	font-size: 25px;
+	font-weight: 580;
+	color: #000;
+	cursor: pointer;
+}
+
+nav .mp3 {
+	color: red;
+}
+
+nav button {
+	outline: none;
+	border: none;
+	background-color: unset;
+	cursor: pointer;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	width: 60%;
+	max-width: 520px;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	margin-bottom: 60px;
+}
+
+main img {
+	display: block;
+	height: 15em;
+	padding: 20px 30px;
+	margin: 25px 20px 10px;
+}
+
+main .input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: 3.2em;
+	border-radius: 100px;
+	box-shadow: 0 0 10px #ccca;
+}
+
+main input {
+	outline: none;
+	border: none;
+	height: 95%;
+	box-sizing: border-box;
+	padding: 10px 1.6em;
+	width: min(350px, 40vw);
+	border-radius: 100px;
+	font-size: 15px;
+}
+
+main button {
+	border-radius: 100px;
+	border: none;
+	outline: none;
+	padding: 8px 2em;
+	height: 80%;
+	min-width: 180px;
+	margin: 5px;
+	box-shadow: 0 0 6px #ccc;
+	cursor: pointer;
+	font-size: 15px;
+	transition: .4s;
+}
+
+main button:hover {
+	background-color: #dddc;
+}
+
+main button:active {
+	background-color: #bbbc;
+}
+
+main h2 {
+	margin-top: 2.2em;
+}
+
+main ul {
+	text-align: left;
+	line-height: 2.3em;
+	margin-block: .2em 2.4em;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+footer {
+	padding: 30px 45px;
+	display: flex;
+	border-top: solid .5px #ccc;
+	justify-content: space-between;
+	opacity: .6;
+	gap: 20px;
+}
+
+a {
+	text-decoration: none;
+	transition: .2s;
+}
+
+a:hover {
+	opacity: .6;
+}
+
+footer ul {
+	display: flex;
+	gap: 35px;
+}
+
+footer a {
+	color: #333;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+@media (max-width: 920px) {
+	main {
+		width: 80%;
+	}
+}
+
+@media (max-width: 650px) {
+	main .input {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-shadow: unset;
+		margin-block: 20px 25px;
+	}
+
+	main input {
+		width: 70vw;
+		border-radius: 100px;
+		box-shadow: 0 0 10px #ccca;
+		margin-bottom: 16px;
+	}
+
+	body :has(input[type='checkbox']:checked) main .input {
+		background-color: unset !important;
+		box-shadow: none !important;
+	}
+}
+
+@media (max-width: 550px) {
+	nav {
+		padding: 20px 25px 15px;
+	}
+	nav h2 {
+		font-size: 20px;
+	}
+	footer {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.switch-btn {
+	width: 50px;
+	height: 20px;
+	background: #ffffff;
+	border: 2px solid #c3dfffba;
+	border-radius: 50px;
+	padding: 6px;
+	z-index: 999;
+}
+
+.switch-btn * {
+	transition: .3s;
+}
+
+.icons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 7px;
+	user-select: none;
+	color: #17193f;
+	transform: translate(0px, -14px);
+}
+
+.icons img {
+	width: 21px;
+	height: 21px;
+	object-fit: cover;
+}
+
+label {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	cursor: pointer;
+	overflow: hidden;
+	background: #f5f5f5;
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+body :has(input[type="checkbox"]:checked) {
+	background: #15151a;
+	color: #f5f5f5;
+
+	& nav h2 {
+		color: #f5f5f5;
+	}
+	& .switch-btn {
+		background: #223;
+		border: 2px solid #ffffff17;
+	}
+	& .switch-btn label {
+		transform: translateX(calc(65px - 35px));
+		background: #17193f;
+	}
+	& .switch-btn label .icons {
+		transform: translate(0px, 14px);
+	}
+	& main .input {
+		background-color: black;
+		box-shadow: 0 0 10px #aaaa;
+	}
+	& main input {
+		color: white;
+		background-color: black;
+	}
+	& main button {
+		color: white;
+		background-color: #222;
+		box-shadow: 0 0 6px #888;
+	}
+	& nav {
+		box-shadow: 0 0 4px #8886;
+	}
+	& footer {
+		border-top: solid .5px #8888;
+	}
+	& footer a {
+		color: #f5f5f5;
+		opacity: .7;
+	}
+}
+
+
